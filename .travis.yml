@@ -1,26 +1,25 @@
-language: node_js # lenguaje usado
+language: node_js
 cache:
-    directories:
-        - ~/.npm # Directorio donde vivira el cache
+  directories:
+    - ~/.npm
 
 node_js:
-    - '14' # version de node
+  - '14'
 
 git:
-    depth: 3 # como va a buscar la estructura de nuestro repositorio
-    # la profundidad a la que llegara.
+  depth: 3
 
 script:
-    - yarn build # yarn es la distribucion que nos permite correr el script
+  - yarn build
 
 deploy:
-    provider: pages # proveedor que en este caso es github-pages
-    edge: true
-    skip-cleanup: false
-    keep-history: true # mantiene el historial de versiones
-    github-token: $GITHUB_TOKEN # El token de acceso a github
-    local-dir: dist/ # el repositorio donde se generar la construccion.
-    target-branch: gh-pages # La rama que accedera.
-    commit_message: "Deploy Release" # el mensaje del commit de la construccion.
-    on:
-        branch: main # le diremos que trabajara sobre master.
+  provider: pages
+  edge: true
+  skip-cleanup: false
+  keep-history: true
+  github-token: $GITHUB_TOKEN
+  local-dir: dist/
+  target-branch: gh-pages
+  commit_message: "Deploy Release"
+  on:
+    branch: main
