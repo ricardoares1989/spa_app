@@ -16,11 +16,11 @@ script:
 deploy:
     provider: pages # proveedor que en este caso es github-pages
     edge: true
-    skip_cleanup: false
+    skip-cleanup: false
     keep-history: true # mantiene el historial de versiones
     github-token: $GITHUB_TOKEN # El token de acceso a github
-    local_dir: dist/ # el repositorio donde se generar la construccion.
+    local-dir: dist/ # el repositorio donde se generar la construccion.
     target-branch: gh-pages # La rama que accedera.
-    commit_messages: "Deploy Release" # el mensaje del commit de la construccion.
+    commit_message: "Deploy Release" # el mensaje del commit de la construccion.
     on:
         branch: main # le diremos que trabajara sobre master.
